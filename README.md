@@ -2,6 +2,10 @@
 
 A tool that removes orphaned volumes from Docker host.
 
+# Installation (from Github releases)
+
+Download from [releases](https://github.com/nabeken/docker-volume-cleanup/releases).
+
 # Installation (from source)
 
 ```sh
