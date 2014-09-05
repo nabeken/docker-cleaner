@@ -1,6 +1,8 @@
 # docker-volume-cleanup [![wercker status](https://app.wercker.com/status/4efcb9ae1b9d0f7d7c2335c4342afec7/s/master "wercker status")](https://app.wercker.com/project/bykey/4efcb9ae1b9d0f7d7c2335c4342afec7)
 
-A tool that removes orphaned volumes from Docker host.
+A tool that removes orphaned volumes from Docker host. It's useful for testing and development.
+
+*I DO NOT RECOMMEND TO RUN THIS COMMAND ON YOUR PRODUCTION ENVIRONMENT.*
 
 # Installation (from Github releases)
 
