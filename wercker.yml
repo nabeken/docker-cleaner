@@ -1,4 +1,4 @@
-box: wercker/golang
+box: motemen/golang-goxc
 build:
   steps:
     - setup-go-workspace
@@ -11,11 +11,15 @@ build:
     - script:
         name: go build
         code: |
-          go build ./... && cp -a docker-volume-cleanup $WERCKER_OUTPUT_DIR/
+          go build ./...
     - script:
         name: go test
         code: |
           go test -v ./...
+    - script:
+        name: goxc build & archive
+        code: |
+          goxc -tasks='xc archive' -bc 'linux,amd64,386' -d $WERCKER_OUTPUT_DIR/ -resources-include='README*' -resources-include='LICENSE*'
 
 deploy:
   steps:
@@ -28,4 +32,7 @@ deploy:
         tag: $RELEASE_TAG
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
-        file: docker-volume-cleanup
+        file: snapshot/docker-volume-cleanup_linux_386.tar.gz
+    - wercker/github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: snapshot/docker-volume-cleanup_linux_amd64.tar.gz
