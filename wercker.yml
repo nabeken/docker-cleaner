@@ -1,0 +1,31 @@
+box: wercker/golang
+build:
+  steps:
+    - setup-go-workspace
+    - script:
+        name: go get
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -v -t ./...
+    - script:
+        name: go build
+        code: |
+          go build ./... && cp -a docker-volume-cleanup $WERCKER_OUTPUT_DIR/
+    - script:
+        name: go test
+        code: |
+          go test -v ./...
+
+deploy:
+  steps:
+    - script:
+        name: restore release tag
+        code: |
+          export RELEASE_TAG=$(date --utc "+%Y%m%d%H%M")
+    - wercker/github-create-release:
+        token: $GITHUB_TOKEN
+        tag: $RELEASE_TAG
+    - wercker/github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: docker-volume-cleanup
