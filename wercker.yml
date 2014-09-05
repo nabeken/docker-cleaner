@@ -19,7 +19,7 @@ build:
     - script:
         name: goxc build & archive
         code: |
-          goxc -tasks='xc archive' -bc 'linux,amd64,386' -d $WERCKER_OUTPUT_DIR/ -resources-include='README*' -resources-include='LICENSE*'
+          goxc -tasks='xc archive' -bc 'linux,amd64,386' -d $WERCKER_OUTPUT_DIR/
 
 deploy:
   steps:
