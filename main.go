@@ -19,7 +19,8 @@ var (
 )
 
 func JoinDockerDir(dirs ...string) string {
-	return *dockerDir + "/" + strings.Join(dirs, string(os.PathSeparator))
+	ps := string(os.PathSeparator)
+	return *dockerDir + ps + strings.Join(dirs, ps)
 }
 
 func DeleteVolume(volumeId string) {
