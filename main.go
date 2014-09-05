@@ -28,7 +28,7 @@ func DeleteVolume(volumeId string) {
 	err = DoDelete(JoinDockerDir("volumes", volumeId))
 	err = DoDelete(JoinDockerDir("vfs", "dir", volumeId))
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "failed to delete volume id", volumeId)
+		fmt.Fprintf(os.Stderr, "%s: failed to delete volume id:%s", err, volumeId)
 	}
 }
 
