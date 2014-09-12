@@ -7,7 +7,6 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/fsouza/go-dockerclient"
 )
@@ -19,8 +18,7 @@ var (
 )
 
 func JoinDockerDir(dirs ...string) string {
-	ps := string(os.PathSeparator)
-	return *dockerDir + ps + strings.Join(dirs, ps)
+	return filepath.Join(*dockerDir, filepath.Join(dirs...))
 }
 
 func DeleteVolume(volumeId string) {
