@@ -55,3 +55,4 @@ The binary form distribution of `docker-volume-cleanup` contains the following p
 
 - [The Go's runtime](http://golang.org/LICENSE)
 - [go-dockerclient](https://github.com/fsouza/go-dockerclient/LICENSE)
+- [cli.go](https://github.com/codegangsta/cli/LICENSE)
