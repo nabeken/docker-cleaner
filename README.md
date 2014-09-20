@@ -6,7 +6,7 @@ A tool that removes orphaned volumes from Docker host. It's useful for testing a
 
 # Installation (from Github releases)
 
-Download from [releases](https://github.com/nabeken/docker-volume-cleanup/releases).
+Download from [releases](https://github.com/nabeken/docker-cleaner/releases).
 
 # Installation (from source)
 
@@ -51,7 +51,7 @@ See [LICENSE](LICENSE).
 
 # LICENSE for binary distribution
 
-The binary form distribution of `docker-volume-cleanup` contains the following products. See individual licenses:
+The binary form distribution of `docker-cleaner` contains the following products. See individual licenses:
 
 - [The Go's runtime](http://golang.org/LICENSE)
 - [go-dockerclient](https://github.com/fsouza/go-dockerclient/LICENSE)
