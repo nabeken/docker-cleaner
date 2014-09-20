@@ -32,7 +32,7 @@ deploy:
         tag: $RELEASE_TAG
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
-        file: snapshot/docker-volume-cleanup_linux_386.tar.gz
+        file: snapshot/docker-cleaner_linux_386.tar.gz
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
-        file: snapshot/docker-volume-cleanup_linux_amd64.tar.gz
+        file: snapshot/docker-cleaner_linux_amd64.tar.gz
