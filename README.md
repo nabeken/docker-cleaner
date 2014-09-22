@@ -32,6 +32,7 @@ AUTHOR:
 
 COMMANDS:
    volume, v	Removes orphaned volumes from Docker host
+   image, i	Removes orphaned images from Docker host
    help, h	Shows a list of commands or help for one command
    
 GLOBAL OPTIONS:
