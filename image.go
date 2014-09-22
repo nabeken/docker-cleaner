@@ -37,7 +37,7 @@ func listImages(client *docker.Client) (images, error) {
 	return apiImages, nil
 }
 
-func filterByName(name string) func(image docker.APIImages) bool {
+func filterByName(name string) filter {
 	return func(image docker.APIImages) bool {
 		for i := range image.RepoTags {
 			if strings.HasPrefix(image.RepoTags[i], name) {
@@ -48,7 +48,7 @@ func filterByName(name string) func(image docker.APIImages) bool {
 	}
 }
 
-func filterByCreatedAt(duration int) func(image docker.APIImages) bool {
+func filterByCreatedAt(duration int) filter {
 	return func(image docker.APIImages) bool {
 		d := time.Second * time.Duration(duration)
 		return time.Since(time.Unix(image.Created, 0)) > d
