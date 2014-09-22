@@ -35,10 +35,10 @@ func joinDockerDir(c *cli.Context, dirs ...string) string {
 	return filepath.Join(c.GlobalString("directory"), filepath.Join(dirs...))
 }
 
-func run(c *cli.Context, dryRun func(), run func()) {
-	if c.Bool("dry-run") {
-		dryRun()
+func run(dryrun bool, dryRunF func(), runF func()) {
+	if dryrun {
+		dryRunF()
 	} else {
-		run()
+		runF()
 	}
 }

@@ -71,7 +71,7 @@ func doImage(c *cli.Context) {
 		Filter(filterByCreatedAt(c.Int("duration")))
 	for i := range ret {
 		var err error
-		run(c,
+		run(!c.Bool("force"),
 			func() {
 				fmt.Println("dryrun: removed:", ret[i].ID, ret[i].RepoTags)
 			},
