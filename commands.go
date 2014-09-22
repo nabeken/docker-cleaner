@@ -16,8 +16,8 @@ var commandVolume = cli.Command{
 	Action:    doVolume,
 	Flags: []cli.Flag{
 		cli.BoolFlag{
-			Name:  "dry-run, n",
-			Usage: "show what volumes will be deleted",
+			Name:  "force, f",
+			Usage: "delete volumes actually",
 		},
 	},
 }
@@ -29,8 +29,8 @@ var commandImage = cli.Command{
 	Action:    doImage,
 	Flags: []cli.Flag{
 		cli.BoolFlag{
-			Name:  "dry-run, n",
-			Usage: "show what images will be deleted",
+			Name:  "force, f",
+			Usage: "delete a image actually",
 		},
 		cli.StringFlag{
 			Name:  "name",

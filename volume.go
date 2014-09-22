@@ -73,7 +73,7 @@ func doVolume(c *cli.Context) {
 		}
 		for _, dir := range dirs {
 			var err error
-			run(c,
+			run(!c.Bool("force"),
 				func() {
 					fmt.Println("dryrun: removed:", dir)
 				},
