@@ -19,7 +19,7 @@ build:
     - script:
         name: goxc build & archive
         code: |
-          goxc -tasks='xc archive' -bc 'linux,amd64,386' -d $WERCKER_OUTPUT_DIR/
+          goxc -tasks='xc archive' -bc 'linux,amd64,386 darwin,amd64,386' -d $WERCKER_OUTPUT_DIR/
 
 deploy:
   steps:
@@ -36,3 +36,9 @@ deploy:
     - wercker/github-upload-asset:
         token: $GITHUB_TOKEN
         file: snapshot/docker-cleaner_linux_amd64.tar.gz
+    - wercker/github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: snapshot/docker-cleaner_darwin_386.tar.gz
+    - wercker/github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: snapshot/docker-cleaner_darwin_amd64.tar.gz
