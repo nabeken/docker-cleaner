@@ -1,4 +1,4 @@
-# docker-cleaner [![wercker status](https://app.wercker.com/status/c828dfeb0d38bac87f4eb1e3f73c1387/s "wercker status")](https://app.wercker.com/project/bykey/c828dfeb0d38bac87f4eb1e3f73c1387)
+# docker-cleaner [![wercker status](https://app.wercker.com/status/c828dfeb0d38bac87f4eb1e3f73c1387/s/master "wercker status")](https://app.wercker.com/project/bykey/c828dfeb0d38bac87f4eb1e3f73c1387)
 
 A tool that removes orphaned volumes from Docker host. It's useful for testing and development.
 
