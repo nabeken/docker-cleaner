@@ -27,7 +27,7 @@ func (i images) Filter(f filter) images {
 
 func listImages(client *docker.Client) (images, error) {
 	images := images{}
-	apiImages, err := client.ListImages(false)
+	apiImages, err := client.ListImages(docker.ListImagesOptions{All: false})
 	if err != nil {
 		return nil, err
 	}
